@@ -1,1 +1,72 @@
 
+.homeBodyContent{
+    .profileSection{
+      overflow: hidden;
+      padding: 20px;
+      .profilePic{
+        float: left;
+        img{
+          width: 100px;
+          border-radius: 50px;
+        }
+      }
+      .profileDetails{
+        float: left;
+        margin: 0 20px;
+        .profileName{
+          font-size: 18px;
+          font-weight: bold;
+          padding: 5px 0 5px 0;
+        }
+        .workTiming{
+          padding: 5px 10px;
+          background: green;
+          font-size: 18px;
+          color: white;
+          font-weight: bold;
+          width: 70px;
+          float: left;
+        }
+        .workAlert{
+          float: left;
+          margin: 0 0 0 5px;
+          font-size: 16px;
+          font-weight: bold;
+          padding: 5px 10px;
+          background: red;
+          color: white;
+        }
+        .workDetails{
+          padding: 5px 0 0 0;
+          font-size: 14px;
+          clear: both;
+          span{
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    .breakPointsSection{
+      height: 70px;
+      background: #efefef;
+      clear: both;
+      .row{
+        padding: 0;
+      }
+      .activeTab{
+        background: dodgerblue;
+        color: #fff !important;
+      }
+      .breaktypes{
+        border: 1px solid #ebebeb;
+        padding: 12px 0 11px 0;
+        text-align: center;
+        width: 20%;
+        color: #000;
+        .icons{
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  

@@ -19,12 +19,13 @@
 
     <!-- build:css main/styles/app.css -->
     <!-- inject:css -->
+    <link rel="stylesheet" href="chat/styles/chat.css">
     <link rel="stylesheet" href="common/styles/common.css">
+    <link rel="stylesheet" href="feeds/styles/feeds.css">
     <link rel="stylesheet" href="home/styles/home.css">
-    <link rel="stylesheet" href="jobs/styles/jobs.css">
-    <link rel="stylesheet" href="learning/styles/learning.css">
-    <link rel="stylesheet" href="quests/styles/quests.css">
+    <link rel="stylesheet" href="member/styles/member.css">
     <link rel="stylesheet" href="splash/styles/splash.css">
+    <link rel="stylesheet" href="todo/styles/todo.css">
     <!-- endinject -->
     <!-- endbuild -->
   </head>
@@ -39,23 +40,37 @@
     <!-- <ion-nav-view></ion-nav-view> -->
 
     <ion-pane ng-controller="commonCtrl">
-      <ion-header-bar></ion-header-bar>
+        <ion-header-bar class="headerBar">
+            <div class="buttons">
+              <span class="icons menuBar ion-android-menu"></span>
+            </div>
+            <h1 class="title">PCR</h1>
+            <div class="buttons">
+              <span class="icons moreIcon ion-android-more-vertical"></span>
+            </div>
+            <div class="addmore">
+              <span class="icons ion-plus"></span>
+            </div>
+        </ion-header-bar>
       <ion-pane>
         <ion-nav-view></ion-nav-view>
       </ion-pane>
       <ion-footer-bar class="footerBar">
         <div class="row tabs-container">
-          <div class="list-tab" ng-click="showHome();">
+          <div class="list-tab" ng-click="showHome();" ng-class="(activeTab == 'home') ? 'active-tab' : 'inactive-tab'">
             <span class="ion-android-home"></span>
           </div>
-          <div class="list-tab" ng-click="showQuests();">
-            <span class="ion-stats-bars"></span>
+          <div class="list-tab" ng-click="showFeeds();" ng-class="(activeTab == 'feeds') ? 'active-tab' : 'inactive-tab'">
+            <span class="ion-android-checkbox-outline"></span>
           </div>
-          <div class="list-tab" ng-click="showLearning();">
+          <div class="list-tab" ng-click="showMember();" ng-class="(activeTab == 'member') ? 'active-tab' : 'inactive-tab'">
             <span class="ion-ios-people"></span>
           </div>
-          <div class="list-tab" ng-click="showJobs();">
-            <span class="ion-ios-list"></span>
+          <div class="list-tab" ng-click="showTodo();" ng-class="(activeTab == 'todo') ? 'active-tab' : 'inactive-tab'">
+              <span class="ion-ios-paper"></span>
+          </div>  
+          <div class="list-tab" ng-click="showChat();" ng-class="(activeTab == 'chat') ? 'active-tab' : 'inactive-tab'">
+              <span class="ion-chatbubbles"></span>
           </div>
         </div>
       </ion-footer-bar>
@@ -83,23 +98,26 @@
 
     <!-- build:js scripts/app.js -->
     <!-- inject:js -->
+    <script src="todo/todo.js"></script>
+    <script src="todo/controllers/todo-ctrl.js"></script>
+    <script src="todo/constants/todo-config-const.js"></script>
     <script src="splash/splash.js"></script>
     <script src="splash/constants/splash-config-const.js"></script>
-    <script src="quests/quests.js"></script>
-    <script src="quests/controllers/quests-ctrl.js"></script>
-    <script src="quests/constants/quests-config-const.js"></script>
-    <script src="learning/learning.js"></script>
-    <script src="learning/controllers/learning-ctrl.js"></script>
-    <script src="learning/constants/learning-config-const.js"></script>
-    <script src="jobs/jobs.js"></script>
-    <script src="jobs/controllers/jobs-ctrl.js"></script>
-    <script src="jobs/constants/jobs-config-const.js"></script>
+    <script src="member/member.js"></script>
+    <script src="member/controllers/member-ctrl.js"></script>
+    <script src="member/constants/member-config-const.js"></script>
     <script src="home/home.js"></script>
     <script src="home/controllers/home-ctrl.js"></script>
     <script src="home/constants/home-config-const.js"></script>
+    <script src="feeds/feeds.js"></script>
+    <script src="feeds/controllers/feeds-ctrl.js"></script>
+    <script src="feeds/constants/feeds-config-const.js"></script>
     <script src="common/common.js"></script>
     <script src="common/controllers/common-ctrl.js"></script>
     <script src="common/constants/common-config-const.js"></script>
+    <script src="chat/chat.js"></script>
+    <script src="chat/controllers/chat-ctrl.js"></script>
+    <script src="chat/constants/chat-config-const.js"></script>
     <script src="app.js"></script>
     <!-- endinject -->
     <!-- endbuild -->

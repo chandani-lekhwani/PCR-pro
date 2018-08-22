@@ -3,28 +3,39 @@ angular.module('pcrLearning', [
   // load your modules here
   'home',  // starting with the main module
   'common',
-  'jobs',
-  'learning',
-  'quests',
+  'feeds',
+  'member',
+  'todo',
+  'chat',
   'splash'
 ])
 
 .controller('commonCtrl', function ($scope, $state) {
 
+  $scope.activeTab = 'home';
   $scope.showHome = function () {
     $state.go('home');
+    $scope.activeTab = 'home';
   };
 
-  $scope.showQuests = function () {
-    $state.go('quests ');
+  $scope.showFeeds = function () {
+    $state.go('feeds');
+    $scope.activeTab = 'feeds';
   };
 
-  $scope.showLearning = function () {
-    $state.go('learning');
+  $scope.showMember = function () {
+    $state.go('member');
+    $scope.activeTab = 'member';
+  };
+  $scope.showTodo = function () {
+    $state.go('todo');
+    $scope.activeTab = 'todo';
   };
 
-  $scope.showJobs = function () {
-    $state.go('jobs');
+
+  $scope.showChat = function () {
+    $state.go('chat');
+    $scope.activeTab = 'chat';
   };
 
   $scope.init = function () {
